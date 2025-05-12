@@ -1,0 +1,310 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+
+
+
+double sub1, sub2, sub3, sub4, sub5, sub6, tot, avg, subjno, sub1cre, sub2cre, sub3cre, sub4cre, sub5cre, sub6cre;
+double sub1score, sub2score, sub3score, sub4score, sub5score, sub6score;
+double goune, totalcre;
+char grade;
+
+void MainWindow::on_Calculate_clicked()
+{
+    sub1 = ui->Subject1->text().toInt();
+    sub2 = ui->Subject2->text().toInt();
+    sub3 = ui->Subject3->text().toInt();
+    sub4 = ui->Subject4->text().toInt();
+    sub5 = ui->Subject5->text().toInt();
+    sub6 = ui->Subject6->text().toInt();
+    sub1cre = ui->subj1cre->text().toInt();
+    sub2cre = ui->subj2cre->text().toInt();
+    sub3cre = ui->subj3cre->text().toInt();
+    sub4cre = ui->subj4cre->text().toInt();
+    sub5cre = ui->subj5cre->text().toInt();
+    sub6cre = ui->subj6cre->text().toInt();
+
+    tot = sub1 + sub2 + sub3 + sub4 + sub5 + sub6;
+    avg = (sub1+sub2+sub3+sub4+sub5+sub6) / subjno;
+    // Subject 1
+    if(sub1 >= 96){
+        sub1score = 4;
+    }
+    else if(sub1 >= 92){
+        sub1score = 3.7;
+    }
+    else if(sub1 >= 88){
+        sub1score = 3.4;
+    }
+    else if(sub1 >= 84){
+        sub1score = 3.2;
+    }
+    else if(sub1 >= 80){
+        sub1score = 3.0;
+    }
+    else if(sub1 >= 76){
+        sub1score = 2.8;
+    }
+    else if(sub1 >= 72){
+        sub1score = 2.6;
+    }
+    else if(sub1 >= 68){
+        sub1score = 2.4;
+    }
+    else if(sub1 >= 64){
+        sub1score = 2.2;
+    }
+    else if(sub1 >= 60){
+        sub1score = 2.0;
+    }
+    else if(sub1 >= 55){
+        sub1score = 1.5;
+    }
+    else if(sub1 >= 50){
+        sub1score = 1.0;
+    }
+    else{
+        sub1score = 0;
+    }
+
+    // Subject 2
+    if(sub2 >= 96){
+        sub2score = 4;
+    }
+    else if(sub2 >= 92){
+        sub2score = 3.7;
+    }
+    else if(sub2 >= 88){
+        sub2score = 3.4;
+    }
+    else if(sub2 >= 84){
+        sub2score = 3.2;
+    }
+    else if(sub2 >= 80){
+        sub2score = 3.0;
+    }
+    else if(sub2 >= 76){
+        sub2score = 2.8;
+    }
+    else if(sub2 >= 72){
+        sub2score = 2.6;
+    }
+    else if(sub2 >= 68){
+        sub2score = 2.4;
+    }
+    else if(sub2 >= 64){
+        sub2score = 2.2;
+    }
+    else if(sub2 >= 60){
+        sub2score = 2.0;
+    }
+    else if(sub2 >= 55){
+        sub2score = 1.5;
+    }
+    else if(sub2 >= 50){
+        sub2score = 1.0;
+    }
+    else{
+        sub2score = 0;
+    }
+
+    // Subject 3
+    if(sub3 >= 96){
+        sub3score = 4;
+    }
+    else if(sub3 >= 92){
+        sub3score = 3.7;
+    }
+    else if(sub3 >= 88){
+        sub3score = 3.4;
+    }
+    else if(sub3 >= 84){
+        sub3score = 3.2;
+    }
+    else if(sub3 >= 80){
+        sub3score = 3.0;
+    }
+    else if(sub3 >= 76){
+        sub3score = 2.8;
+    }
+    else if(sub3 >= 72){
+        sub3score = 2.6;
+    }
+    else if(sub3 >= 68){
+        sub3score = 2.4;
+    }
+    else if(sub3 >= 64){
+        sub3score = 2.2;
+    }
+    else if(sub3 >= 60){
+        sub3score = 2.0;
+    }
+    else if(sub3 >= 55){
+        sub3score = 1.5;
+    }
+    else if(sub3 >= 50){
+        sub3score = 1.0;
+    }
+    else{
+        sub3score = 0;
+    }
+
+    // Subject 4
+    if(sub4 >= 96){
+        sub4score = 4;
+    }
+    else if(sub4 >= 92){
+        sub4score = 3.7;
+    }
+    else if(sub4 >= 88){
+        sub4score = 3.4;
+    }
+    else if(sub4 >= 84){
+        sub4score = 3.2;
+    }
+    else if(sub4 >= 80){
+        sub4score = 3.0;
+    }
+    else if(sub4 >= 76){
+        sub4score = 2.8;
+    }
+    else if(sub4 >= 72){
+        sub4score = 2.6;
+    }
+    else if(sub4 >= 68){
+        sub4score = 2.4;
+    }
+    else if(sub4 >= 64){
+        sub4score = 2.2;
+    }
+    else if(sub4 >= 60){
+        sub4score = 2.0;
+    }
+    else if(sub4 >= 55){
+        sub4score = 1.5;
+    }
+    else if(sub4 >= 50){
+        sub4score = 1.0;
+    }
+    else{
+        sub4score = 0;
+    }
+
+    // Subject 5
+    if(sub5 >= 96){
+        sub5score = 4;
+    }
+    else if(sub5 >= 92){
+        sub5score = 3.7;
+    }
+    else if(sub5 >= 88){
+        sub5score = 3.4;
+    }
+    else if(sub5 >= 84){
+        sub5score = 3.2;
+    }
+    else if(sub5 >= 80){
+        sub5score = 3.0;
+    }
+    else if(sub5 >= 76){
+        sub5score = 2.8;
+    }
+    else if(sub5 >= 72){
+        sub5score = 2.6;
+    }
+    else if(sub5 >= 68){
+        sub5score = 2.4;
+    }
+    else if(sub5 >= 64){
+        sub5score = 2.2;
+    }
+    else if(sub5 >= 60){
+        sub5score = 2.0;
+    }
+    else if(sub5 >= 55){
+        sub5score = 1.5;
+    }
+    else if(sub5 >= 50){
+        sub5score = 1.0;
+    }
+    else{
+        sub5score = 0;
+    }
+
+    // Subject 6
+    if(sub6 >= 96){
+        sub6score = 4;
+    }
+    else if(sub6 >= 92){
+        sub6score = 3.7;
+    }
+    else if(sub6 >= 88){
+        sub6score = 3.4;
+    }
+    else if(sub6 >= 84){
+        sub6score = 3.2;
+    }
+    else if(sub6 >= 80){
+        sub6score = 3.0;
+    }
+    else if(sub6 >= 76){
+        sub6score = 2.8;
+    }
+    else if(sub6 >= 72){
+        sub6score = 2.6;
+    }
+    else if(sub6 >= 68){
+        sub6score = 2.4;
+    }
+    else if(sub6 >= 64){
+        sub6score = 2.2;
+    }
+    else if(sub6 >= 60){
+        sub6score = 2.0;
+    }
+    else if(sub6 >= 55){
+        sub6score = 1.5;
+    }
+    else if(sub6 >= 50){
+        sub6score = 1.0;
+    }
+    else{
+        sub6score = 0;
+    }
+
+    if(avg>=90){
+        grade = 'A';
+    }
+    else if(avg<90 && avg>=80){
+        grade = 'B';
+    }
+    else if(avg < 80 && avg >=70){
+        grade = 'C';
+    }
+    else if(avg < 70 && avg >=60){
+        grade = 'D';
+    }
+    else{
+        grade = 'F';
+    }
+    totalcre = sub1cre + sub2cre + sub3cre + sub4cre + sub5cre + sub6cre;
+    goune = ((sub1cre*sub1score) + (sub2cre*sub2score) + (sub3cre*sub3score) + (sub4cre * sub4score) + (sub5cre*sub5score) + (sub6cre * sub6score)) / totalcre;
+    ui->Total->setText(QString::number(tot));
+    ui->Avg->setText(QString::number(avg));
+    ui->Gpa->setText(QString::number(goune));
+    ui->Grade->setText(QString(grade));
+
+}
+
