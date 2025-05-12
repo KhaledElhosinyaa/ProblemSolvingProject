@@ -1,0 +1,25 @@
+double getScore(int mark) {
+    switch (mark / 4) {   
+        case 25: // 100 - 96
+        case 24: return 4.0; // 96+
+        case 23: return 3.7; // 92 - 95
+        case 22: return 3.4; // 88 - 91
+        case 21: return 3.2; // 84 - 87
+        case 20: return 3.0; // 80 - 83
+        case 19: return 2.8; // 76 - 79
+        case 18: return 2.6; // 72 - 75
+        case 17: return 2.4; // 68 - 71
+        case 16: return 2.2; // 64 - 67
+        case 15: return 2.0; // 60 - 63
+        case 14: return 1.5; // 55 - 59
+        case 13: return 1.0; // 50 - 54
+        default: return 0.0; // less than 50
+    }
+}
+
+sub1score = getScore(sub1);
+sub2score = getScore(sub2);
+sub3score = getScore(sub3);
+sub4score = getScore(sub4);
+sub5score = getScore(sub5);
+sub6score = getScore(sub6);
